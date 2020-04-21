@@ -9,7 +9,7 @@ npm install -g testcafe
 testcafe --list-browsers
 ```
 
-### Run tests (GitBash terminal)
+### Run tests (Windows, GitBash terminal)
 #### 1 - Using [.testcaferc.json]( ./.testcaferc.json)
 ```
 testcafe
@@ -25,13 +25,13 @@ testcafe chrome tests/test2.js
 #### 4.1 [DOCKER](./Dockerfile) - build custom testcafe image
 ```
 docker build -t testcafe-custom .
-docker run testcafe/testcafe --list-browsers
+docker run -rm testcafe-custom --list-browsers
 ```
 #### 4.2 - DOCKER - all tests
 ```
-winpty docker run -it testcafe-custom 
+docker run -rm testcafe-custom 
 ```
 #### 4.3 - DOCKER - specific browser and tests
 ```
-winpty docker run -it testcafe-custom firefox tests/test2.js
+docker run -rm testcafe-custom firefox tests/test2.js
 ```
