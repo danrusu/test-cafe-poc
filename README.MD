@@ -25,13 +25,13 @@ testcafe chrome tests/test2.js
 #### 4.1 [DOCKER](./Dockerfile) - build custom testcafe image
 ```
 docker build -t testcafe-custom .
-docker run -rm testcafe-custom --list-browsers
+docker run --rm testcafe-custom --list-browsers
 ```
 #### 4.2 - DOCKER - all tests
 ```
-docker run -rm testcafe-custom 
+docker run --rm testcafe-custom 
 ```
 #### 4.3 - DOCKER - specific browser and tests
 ```
-docker run -rm testcafe-custom firefox tests/test2.js
+docker run --rm testcafe-custom firefox tests/test2.js
 ```
