@@ -22,13 +22,13 @@ testcafe chrome tests
 ```
 testcafe chrome tests/test2.js
 ```
-#### 4 - DOCKER - all tests - NOT WORKING!!!
+#### 4 - [DOCKER](https://devexpress.github.io/testcafe/documentation/using-testcafe/using-testcafe-docker-image.html) - all tests - NOT WORKING!!!
 ```
 docker run testcafe/testcafe --list-browsers
 
 winpty docker run -v /${PWD}:/tests -it testcafe/testcafe chromium tests/tests/*.js
 ```
-#### 5 - DOCKER - specific test - NOT WORKING!!!
+#### 5 - [DOCKER](https://devexpress.github.io/testcafe/documentation/using-testcafe/using-testcafe-docker-image.html) - specific test - NOT WORKING!!!
 ```
 winpty docker run -v /${PWD}:/tests -it testcafe/testcafe chromium tests/tests/test2.js
 ```
