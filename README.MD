@@ -35,3 +35,7 @@ docker run --rm testcafe-custom
 ```
 docker run --rm testcafe-custom firefox tests/test2.js
 ```
+#### 5 - Debugging
+```
+winpty docker run -it --entrypoint sh testcafe-custom
+```
