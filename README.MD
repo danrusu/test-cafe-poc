@@ -9,7 +9,7 @@ npm install -g testcafe
 testcafe --list-browsers
 ```
 
-### Run tests (GitBash terminal)
+### Run tests (Windows, GitBash terminal)
 #### 1 - Using [.testcaferc.json]( ./.testcaferc.json)
 ```
 testcafe
