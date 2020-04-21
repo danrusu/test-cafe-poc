@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-#winpty docker run -rm -it cutom-testcafe
-
 XVFB_SCREEN_WIDTH=${SCREEN_WIDTH-1280}
 XVFB_SCREEN_HEIGHT=${SCREEN_HEIGHT-720}
 

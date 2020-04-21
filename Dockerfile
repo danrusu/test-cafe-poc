@@ -18,8 +18,8 @@ RUN npm install
 RUN chmod +x run.sh
 
 #remove windows line ends 
-#RUN tr -d '\15\32' < .testcaferc.json > .testcaferc.json
-#RUN tr -d '\15\32' < testcafe-docker.sh > testcafe-docker.sh
+RUN tr -d '\15\32' < run.sh > helper && cat helper > run.sh && rm helper
+RUN tr -d '\15\32' < .testcaferc.json > helper && cat helper > .testcaferc.json && rm helper
 
 EXPOSE 1337 1338
 
