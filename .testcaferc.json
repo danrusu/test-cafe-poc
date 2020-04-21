@@ -1,4 +1,4 @@
 {
-    "browsers": ["chrome"],
+    "browsers": ["chromium --no-sandbox"], 
     "src": ["tests/**/*.js"]
 }

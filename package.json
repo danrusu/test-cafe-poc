@@ -10,6 +10,7 @@
   "author": "dan.rusu",
   "license": "MIT",
   "dependencies": {
+    "chromium": "^2.1.2",
     "testcafe": "^1.8.4"
   }
 }

@@ -14,21 +14,24 @@ testcafe --list-browsers
 ```
 testcafe
 ```
-#### 2 - CLI arguments - all tests
+#### 2 - CLI arguments - all tests, specific browser
 ```
 testcafe chrome tests 
 ```
-#### 3 - CLI arguments - specific test
+#### 3 - CLI arguments - specific browser and test
 ```
 testcafe chrome tests/test2.js
 ```
-#### 4 - [DOCKER](https://devexpress.github.io/testcafe/documentation/using-testcafe/using-testcafe-docker-image.html) - all tests - NOT WORKING!!!
+#### 4.1 [DOCKER](./Dockerfile) - build custom testcafe image
 ```
+docker build -t testcafe-custom .
 docker run testcafe/testcafe --list-browsers
-
-winpty docker run -v /${PWD}:/tests -it testcafe/testcafe chromium tests/tests/*.js
 ```
-#### 5 - [DOCKER](https://devexpress.github.io/testcafe/documentation/using-testcafe/using-testcafe-docker-image.html) - specific test - NOT WORKING!!!
+#### 4.2 - DOCKER - all tests
 ```
-winpty docker run -v /${PWD}:/tests -it testcafe/testcafe chromium tests/tests/test2.js
+winpty docker run -it testcafe-custom 
+```
+#### 4.3 - DOCKER - specific browser and tests
+```
+winpty docker run -it testcafe-custom firefox tests/test2.js
 ```
