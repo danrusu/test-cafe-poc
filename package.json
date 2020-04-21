@@ -1,0 +1,15 @@
+{
+  "name": "test-cafe-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe"
+  },
+  "keywords": [],
+  "author": "dan.rusu",
+  "license": "MIT",
+  "dependencies": {
+    "testcafe": "^1.8.4"
+  }
+}
