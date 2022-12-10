@@ -10,6 +10,8 @@
   "author": "dan.rusu",
   "license": "MIT",
   "dependencies": {
+    "@percy/cli": "^1.16.0",
+    "@percy/testcafe": "^1.0.3",
     "chromium": "^2.1.2",
     "testcafe": "^1.8.4"
   }
