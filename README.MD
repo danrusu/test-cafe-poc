@@ -27,7 +27,7 @@ testcafe chrome tests
 #### 3 - CLI arguments - specific browser and test
 
 ```
-testcafe chrome tests/test2.js
+testcafe chrome tests/test-expect-ok.js
 ```
 
 #### 4.1 [DOCKER](./Dockerfile) - build custom testcafe image
