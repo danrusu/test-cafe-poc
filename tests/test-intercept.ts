@@ -1,9 +1,9 @@
 import { t as TestController } from 'testcafe';
 import interceptHttp from '../src/utils/interceptHttp';
 
-fixture
-  .only('intercept test')
-  .page(`file:///${__dirname}/../resources/dummyPage1.html`);
+fixture('intercept test').page(
+  `file:///${__dirname}/../resources/dummyPage1.html`,
+);
 
 const requestFilter = {
   method: 'get',
