@@ -34,7 +34,7 @@ test('intercepts correct url', async t => {
 
   if (!result.success) {
     throw new Error(
-      `Validation failed for request: ${JSON.stringify(
+      `Url validation failed for intercepted request: ${JSON.stringify(
         result.request,
         null,
         2,
