@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" lang="en" />
+  <title>dummy1</title>
+  <style>
+    #requests {
+      margin-top: 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <a id="dummy2" href="./dummyPage2.html">dummy2</a>
+    <div id="requests">Requests</div>
+  </div>
+</body>
+
+<script>
+  document.getElementById('requests')
+    .addEventListener('click', sendRequests);
+
+  function sendRequests() {
+    fetchAndLog(
+      'https://raw.githubusercontent.com/danrusu/test-cafe-poc/master/package.json'
+    );
+    fetchAndLog(
+      'https://raw.githubusercontent.com/danrusu/test-cafe-poc/master/tsconfig.json'
+    );
+  }
+
+  function fetchAndLog(url) {
+    fetch(url)
+      .then(res => res.json())
+      .then(json => {
+        console.log(JSON.stringify(json, null, 2));
+      });
+  }
+</script>
+
+</html>

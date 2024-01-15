@@ -1,18 +1,24 @@
 {
-  "name": "test-cafe-demo",
+  "name": "test-cafe-poc",
   "version": "1.0.0",
-  "description": "",
+  "description": "practice testcafe scenarios",
   "main": "index.js",
   "scripts": {
+    "build": "tsc --noEmit",
     "test": "testcafe"
   },
   "keywords": [],
   "author": "dan.rusu",
   "license": "MIT",
   "dependencies": {
-    "@percy/cli": "^1.16.0",
-    "@percy/testcafe": "^1.0.3",
-    "chromium": "^2.1.2",
-    "testcafe": "^1.8.4"
+    "chromium": "^3.0.3",
+    "portscanner": "^2.2.0",
+    "testcafe": "3.5.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.2",
+    "typescript": "^5.3.3"
   }
 }

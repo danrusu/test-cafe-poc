@@ -1,12 +1,10 @@
 {
+  "include": ["src", "tests"],
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "downlevelIteration": true,
-    "resolveJsonModule": true
+    "forceConsistentCasingInFileNames": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   }
 }

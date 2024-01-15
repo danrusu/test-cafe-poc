@@ -1,9 +1,0 @@
-{
-  "browsers": ["chromium --no-sandbox"],
-  "src": ["tests/**/*.js"],
-  "compilerOptions": {
-    "typescript": {
-      "configPath": "./tsconfig.json"
-    }
-  }
-}
