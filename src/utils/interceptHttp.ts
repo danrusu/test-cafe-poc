@@ -4,7 +4,7 @@ export default async function interceptHttp(
   t: TestController,
   requestFilter: string | object | RegExp | (<U>(req: U) => boolean),
   uiActions: (t: TestController) => Promise<void>,
-  interceptProcessor: <T>(requestLogger: RequestLogger) => Promise<{
+  interceptProcessor: (requestLogger: RequestLogger) => Promise<{
     result: boolean;
     request?: RequestData;
     response?: ResponseData;
