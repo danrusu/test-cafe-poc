@@ -15,9 +15,9 @@ export default async function interceptHttp(
 
   await uiActions(t);
 
-  const validationResult = await interceptProcessor(requestLogger);
+  const result = await interceptProcessor(requestLogger);
 
   await t.removeRequestHooks(requestLogger);
 
-  return validationResult;
+  return result;
 }
