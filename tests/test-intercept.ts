@@ -15,8 +15,8 @@ const uiActions = async (t: typeof TestController) => {
 };
 
 const interceptProcessor = async (requestLogger: RequestLogger) => {
-  let request: RequestData;
-  let response: ResponseData;
+  let request: RequestData | undefined;
+  let response: ResponseData | undefined;
   const result = await requestLogger.contains(httpRequest => {
     request = httpRequest.request;
     response = httpRequest.response;
