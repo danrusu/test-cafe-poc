@@ -4,9 +4,10 @@ export default async function interceptHttp(
   t: TestController,
   requestFilter: string | object | RegExp | (<U>(req: U) => boolean),
   uiActions: (t: TestController) => Promise<void>,
-  validation: (requestLogger: RequestLogger) => Promise<{
-    success: boolean;
-    request: LoggedRequest;
+  interceptProcessor: <T>(requestLogger: RequestLogger) => Promise<{
+    result: boolean;
+    request?: RequestData;
+    response?: ResponseData;
   }>,
 ) {
   const requestLogger = RequestLogger(requestFilter);
@@ -14,7 +15,7 @@ export default async function interceptHttp(
 
   await uiActions(t);
 
-  const validationResult = await validation(requestLogger);
+  const validationResult = await interceptProcessor(requestLogger);
 
   await t.removeRequestHooks(requestLogger);
 

@@ -1,9 +1,9 @@
 import { t as TestController } from 'testcafe';
 import interceptHttp from '../src/utils/interceptHttp';
 
-fixture('intercept test').page(
-  `file:///${__dirname}/../resources/dummyPage1.html`,
-);
+fixture
+  .only('intercept test')
+  .page(`file:///${__dirname}/../resources/dummyPage1.html`);
 
 const requestFilter = {
   method: 'get',
@@ -14,28 +14,35 @@ const uiActions = async (t: typeof TestController) => {
   await t.click('#requests');
 };
 
-const validation = async (requestLogger: RequestLogger) => {
-  let request;
-  const success = await requestLogger.contains(httpRequest => {
-    request = httpRequest;
+const interceptProcessor = async (requestLogger: RequestLogger) => {
+  let request: RequestData;
+  let response: ResponseData;
+  const result = await requestLogger.contains(httpRequest => {
+    request = httpRequest.request;
+    response = httpRequest.response;
     return httpRequest.request.url.startsWith(
       'https://raw.githubusercontent.com/danrusu/test-cafe-poc/master1',
     );
   });
   return {
-    success,
+    result,
     request,
+    response,
   };
 };
 
 test('intercepts correct url', async t => {
-  const result = await interceptHttp(t, requestFilter, uiActions, validation);
-  //console.log(JSON.stringify(result, null, 2));
+  const intercepted = await interceptHttp(
+    t,
+    requestFilter,
+    uiActions,
+    interceptProcessor,
+  );
 
-  if (!result.success) {
+  if (!intercepted.result) {
     throw new Error(
       `Url validation failed for intercepted request: ${JSON.stringify(
-        result.request,
+        intercepted,
         null,
         2,
       )}`,

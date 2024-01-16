@@ -1,8 +1,8 @@
 import { RequestLogger } from 'testcafe';
 
-fixture
-  .only('intercept test')
-  .page(`file:///${__dirname}/../resources/dummyPage1.html`);
+fixture('intercept test').page(
+  `file:///${__dirname}/../resources/dummyPage1.html`,
+);
 
 test('intercepts correct url', async t => {
   const requestLogger = RequestLogger({
@@ -20,7 +20,7 @@ test('intercepts correct url', async t => {
   const validationSuccess = await requestLogger.contains(httpRequest => {
     request = httpRequest;
     return httpRequest.request.url.startsWith(
-      'https://raw.githubusercontent.com/danrusu/test-cafe-poc/master1',
+      'https://raw.githubusercontent.com/danrusu/test-cafe-poc/master',
     );
   });
 
